@@ -42,3 +42,18 @@ const myFunction = function () {
 }
 
 console.log(typeof myFunction); //return type will be objectfunction
+
+
+
+
+
+
+
+//******************************MEMORY****************************
+
+//Stack (primitive) , Heap (Non primitive)
+/*
+In stack we get a copy of a original value
+In Heap we get a referanc and changes are made 
+in original file only
+*/
