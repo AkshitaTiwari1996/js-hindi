@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/33516862/pexels-photo-33516862.jpeg?
+                cs=srgb&dl=pexels-yasar-baskurt-706180077-3
+                3516862.jpg&fm=jpg&_gl=1*11aeikr*_ga*Njc2NDIwMzQwLjE3NTYxMDY0ODY.*_ga_
+                8JE65Q40S6*czE3NTYxMDY0ODUkbzEkZzEkdDE3NTYxMDcwMjAkajM2JGwwJGgw"
+                alt="photoshop"></li>
+                <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            </ul>
+        </div>
+</body>
+<script>
+    // document.getElementById('photoshop').onclick = function(){
+    //    alert("photoshhop ")
+    //}
+    //attachEvent()
+    //jQuery-On
+
+
+    /*document.getElementById('photoshop').addEventListener('click',function (e){
+        console.log(e);
+    },false)*/
+    //type,timestamp,dafaultPrevented
+    //target,toElement,srcElement,currentTarget
+    //clientX,clienty,screenx,screeny
+    //altkey,ctrlkey,shiftkey,keycode
+    
+
+    //Event propogation-bubbling
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log("clicked inside the ul");
+    },false)
+
+     document.getElementById('photoshop').addEventListener('click',function(e){
+        console.log("photoshop clicked");
+        e.stopPropagation() //event will not bubble
+    },false)
+
+
+
+    //Prevent 
+    document.getElementById('google').addEventListener
+    ('click',function(e){
+        console.log("google clicked");
+        e.preventDefault(); //it will not go to the link now
+    },false)
+
+    document.querySelector('#images').addEventListener
+    ('click',function(e){
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()          
+        }
+    })
+</script>
+</html>
+
+//Js is a sequential run language
